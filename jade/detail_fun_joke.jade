@@ -1,0 +1,11 @@
+include mixinlist
++html()
+  +header('段子-轻松一刻','detail_page')
+    +detail_fun()
+    .detail_fun_comment#tab_comment(style="display:block")
+      +loadmore()
+      +tip_nocomment()
+      +comment_item()
+      +comment_item()
+      +comment_item()
+      +detail_footer_comment()

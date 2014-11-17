@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>段子-轻松一刻</title>
+    <link rel="stylesheet" href="css/resource_ad.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      window.onload=function(){
+        $(".ico,.detail_contbox a,.search_list li a").on('tap.hover', function () {
+          var node = $(this);
+          node.addClass('hover');
+          setTimeout(function () {
+              node.removeClass('hover');
+          },300);
+        });
+      }
+    </script>
+  </head>
+  <body class="detail_page">
+    <div class="detail_fun">
+      <section class="pic_fun"><img src="img/720x406.png" alt=""><span class="btn_play"></span></section>
+    </div>
+    <div class="fun_detail">
+      <aside class="intro_detail">
+        <p>简介：是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。</p>
+      </aside>
+      <footer class="fun_op"><a href="#" class="ico ico_share">分享</a><a href="#" onclick="this.className='ico ico_like2 ico_like2_done'" class="ico ico_like2">收藏</a><span class="ico ico_comment disabled">1222</span><a href="#" onclick="this.className='ico ico_favour ico_favour_done'" class="ico ico_favour">2222</a></footer>
+    </div>
+    <div id="tab_comment" style="display:block" class="detail_fun_comment">
+      <article class="comment_item">
+        <h1 class="comment_author">宝贝大王</h1>
+        <time class="comment_time">2小时前</time>
+        <section class="comment_detail">
+          <p>除梁朝伟扮演叶问之外，韩国影星宋慧乔出演叶问之妻是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。除梁朝伟扮演叶问之外，韩国影星宋慧乔出演叶问之妻是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。</p>
+        </section>
+      </article>
+      <article class="comment_item">
+        <h1 class="comment_author">宝贝大王</h1>
+        <time class="comment_time">2小时前</time>
+        <section class="comment_detail">
+          <p>除梁朝伟扮演叶问之外，韩国影星宋慧乔出演叶问之妻是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。除梁朝伟扮演叶问之外，韩国影星宋慧乔出演叶问之妻是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。</p>
+        </section>
+      </article>
+      <article class="comment_item">
+        <h1 class="comment_author">宝贝大王</h1>
+        <time class="comment_time">2小时前</time>
+        <section class="comment_detail">
+          <p>除梁朝伟扮演叶问之外，韩国影星宋慧乔出演叶问之妻是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。除梁朝伟扮演叶问之外，韩国影星宋慧乔出演叶问之妻是王家卫导演筹备期长达8年之久的首部功夫巨片，由梁朝伟、章子怡、宋慧乔、张震、赵本山等巨星加盟，讲述的是由梁朝伟饰演的一代武学宗师“叶问”先生的传奇一生。</p>
+        </section>
+      </article>
+      <div class="detail_footer detail_footer_comment">
+        <form method="get" id="commentform">
+          <div class="comment_textarea">
+            <textarea type="text" name="comment" id="comment" placeholder="输入评论"></textarea>
+          </div>
+          <button type="submit" class="btn_comment_submit">提交</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+include mixinlist
++html()
+  +header('个人中心','user_page')
+    header.top
+      .headpic
+        img(src="img/headpic.jpg")
+        span.ico_vip vip
+      h1.user_name 雷鸟
+      h2.user_integral 
+        span.num 6197
+      a.obtn.obtn_signin(href="#") 每日签到
+      // a.obtn.obtn_signin.obtn_signin_done(href="#") 已签到
+      a.obtn.obtn_shoplink(href="#") 积分商城
+    section.task_box
+      header.task_head
+        h1.t_task 做任务赚积分
+        a.lk_help(href="user_integral_help.html") 怎么玩
+      .list_task_box
+        ul.list_task
+          li
+            .row_title 保持登录在线
+              .row_intro 每60分钟=3积分
+            .row_get 
+              em.c_hlight 3
+              |/9积分
+          li
+            .row_title 分享资源
+              .row_intro 分享1次=1积分
+            .row_get 
+              em.c_hlight 3
+              |/9积分
+          li
+            .row_title 连续7天签到
+              .row_intro +10积分
+            .row_get 
+              em.c_hlight 2
+              |/7天
+          li
+            .row_title 加入朋友圈
+              .row_intro +30积分
+            .row_get
+               a.obtn.obtn_get(href="#") 领取积分
+               // 点击状态类名 hover
+               // 不可点添加类名 obtn_fbd
+          li.list_task_more
+            a.lk_more(href="#") 查看更多任务
+        ul.list_task
+          li
+            .row_title
+              .task_app 加入资源群
+                img(src="img/headpic.jpg")
+                .row_intro 下载该APP并安装下载该APP并安装下载该APP并安装=2积分
+            .row_get
+               a.obtn(href="#") 查询任务状态
+      a.lk_item(href="help.html") 福利中心
+      // toast
+      // 显示添加类名 fadeInUp 移除 fadeOuown
+      // 消失添加类名 fadeOuown 移除 fadeInUp
+    .layer_toast.fadeOuown
+      p +3 积分
+    // 浮层
+    .bg_layer
+     // 显示添加类名 fadeIn 移除 fadeOut
+     // 隐藏添加类名 fadeOut 移除 fadeIn
+    section.layer_box
+      // 显示添加类名 fadeInUp 移除 fadeOuown
+      // 消失添加类名 fadeOuown 移除 fadeInUp
+      .ico.ico_close
+      .layer_app
+        img.layer_pic_app(src="img/headpic.jpg")
+        h1 囧西游
+        h2 就差最后一步了哦~
+      .layer_op.layer_op_single
+        a.btn_layer(href="#") 去做任务

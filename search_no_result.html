@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>搜索无结果</title>
+    <link rel="stylesheet" href="css/resource_ad.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      window.onload=function(){
+        $(".ico,.detail_contbox a,.search_list li a").on('tap.hover', function () {
+          var node = $(this);
+          node.addClass('hover');
+          setTimeout(function () {
+              node.removeClass('hover');
+          },300);
+        });
+      }
+    </script>
+  </head>
+  <body class="search_page">
+    <div class="search_main"></div>
+    <nav style="display:none1" class="nav">
+      <ul>
+        <li><a href="search_result.html" class="hover">全部视频</a></li>
+        <li><a href="search_result_svideo.html">短视频</a></li>
+        <li><a href="search_result_ebook.html">电子书</a></li>
+      </ul>
+    </nav>
+    <div class="tip_none tip_noresult_more">
+      <div class="tip_none_text">
+        <p>没有找到相关内容，  </p>
+        <p>我们可帮您在其他网站找到资源。试试吧？</p>
+      </div><a href="" class="fbtn fbtn_full">一键开启全网搜索模式</a>
+    </div>
+    <h1 class="t_guess">猜你喜欢</h1>
+    <section class="item_box item_site_box">
+      <section class="item item_out"><a href="" class="item_link">
+          <h1>守护者联盟</h1>
+          <div class="pic_bor"><img src="img/list_pic3.jpg" alt=""></div>
+          <ul class="item_info">
+            <li>大小:1.2GB</li>
+            <li>下载:50000次</li>
+          </ul></a></section>
+      <!--
+      <item>end </item>
+      -->
+      <section class="item item_out"><a href="" class="item_link">
+          <h1>守护者联盟</h1>
+          <div class="pic_bor"><img src="http://img.a67.com/201301/11/201301111401508521.jpg" alt=""></div>
+          <ul class="item_info">
+            <li>大小:1.2GB</li>
+            <li>下载:50000次</li>
+          </ul></a></section>
+      <!--
+      <item>end </item>
+      -->
+      <section class="item item item_out"><a href="" class="item_link">
+          <h1>守护者联盟</h1>
+          <div class="pic_bor"><img src="http://img.sjzhushou.kanimg.com/mmstat/logo-1363661943.jpg" alt=""></div>
+          <ul class="item_info">
+            <li>大小:1.2GB</li>
+            <li>下载:50000次</li>
+          </ul></a></section>
+      <!--
+      <item>end </item>
+      -->
+      <p class="loadmore">暂无更多</p>
+    </section>
+  </body>
+</html>

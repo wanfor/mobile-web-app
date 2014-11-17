@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ico demo</title>
+    <link rel="stylesheet" href="css/resource_ad.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      window.onload=function(){
+        $(".ico,.detail_contbox a,.search_list li a").on('tap.hover', function () {
+          var node = $(this);
+          node.addClass('hover');
+          setTimeout(function () {
+              node.removeClass('hover');
+          },300);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="ico ico_comment">c</div>
+    <div class="ico ico_down">D</div>
+    <div class="ico ico_down">E</div>
+    <div class="ico ico_favour">F</div>
+    <div class="ico ico_favour ico_favour_done">f</div>
+    <div class="ico ico_like">L</div>
+    <div class="ico ico_like ico_like_done">l</div>
+    <div class="ico ico_like2">M</div>
+    <div class="ico ico_like2 ico_like2_done">m</div>
+    <div class="ico ico_ok">O</div>
+    <div class="ico ico_play">P</div>
+    <div class="ico ico_share">S</div>
+    <div class="ico ico_send">s</div>
+    <div class="ico ico_close">X</div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+include mixinlist
++html()
+  +header('button demo','')
+    div
+        h2 全UI通用
+        a(href="#").obtn 签到
+        a(href="#").obtn.obtn_signin_done 已签到
+        a(href="#").obtn.obtn_full 按钮
+    div
+        h2 用于视频图片内部
+        a(href="#").btn_play 按钮
+    div
+        h2 搜索页
+        a(href="#").fbtn 去全网搜索资源
+        h2 下载格式选择
+        nav.filter_nav
+            a.fbd(href="#") 标清
+            a.on(href="#") 高清
+            a(href="#") 超清
+
+    div
+        h2 搜索页
+        a(href="#").bbtn 分集
+      

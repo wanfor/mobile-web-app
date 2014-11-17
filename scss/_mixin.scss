@@ -1,0 +1,176 @@
+/* common int */
+$textColor:#111111;
+$titleColor:#666666;
+/* ----- */
+$softColor:#CCCDCE;
+$baseColor:#272F3C;
+$lightColor:#8E9298; /* 142,146,152 */
+$navColor:#838488;
+$hlightColor:#347FF1; /*blue */
+$doneColor:#FD4E5B; /*red */
+/* ----- */
+$divideColor:#D9D9D9; /* 217 */
+$disabledColor:#CFD1DD;/* 207,209,221 */
+$tipColor:#9fa1ac; /* 159,161,172 */
+$icoColor:#747986; /* 116,121,134 */
+/* ----- */
+/*all above are gray,and lighter down */
+$bgcolor:#DFE1ED;
+$tipBgcolor:#C8CBDD;
+$tipFgcolor:#7EA5E7;
+$bannerDvideColor:#C9CAD5; /* detail page tab and footer banner border */
+$bannerBgcolor:#F2F3F7; /* detail page tab and footer banner bg */
+$navBgcolor:#BFC2CB;
+/* ----- */
+$toastBgcolor:#1F222A;
+$guideColor:#11AEFF; /*combridge blue */
+$likeColor:#FF76BA; /*pink */
+/* ----- */
+
+/* gap size */
+$gapAllSide:20px;
+$gapVertical:20px;
+$gapLandscape:10px;
+$gapVerticalSmall:5px;
+$pic_bor_padding:1.1rem;
+/* font size */
+$subtitleSize:16px;
+$lv3titleSize:14px;
+$baseSize:12px;
+
+/* function */
+@mixin size($width, $height) {
+  width: rem($width);
+  height: rem($height);
+}
+
+/* layout size */
+$picWidth:rem(216);
+$picGap:rem(24);
+
+@function rem($px) {
+  @return ($px / 30) * 1rem;
+}
+@mixin bgpic_element($bgpic_element){    
+  $img-width:image-width($bgpic_element);
+  $img-height:image-height($bgpic_element);
+  width:rem($img-width / 1px);
+  height:rem($img-height / 1px);
+  background-image: url('../images/#{$bgpic_element}');
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+/* @import "lico/*.png"; 
+@include all-lico_sprites; 
+$lico_sprites: sprite-map("lico/*.png"); */
+    // $sprite-url:lico;
+// $lico-sprites: sprite-map("lico/*.png", $spacing: 10px);
+// %sprites{background-image: sprite-url($sprites);}
+@mixin sprite_map($sprite_path) {
+  $sprites_generate: sprite-map("#{$sprite_path}/*.png");
+  background-image: $sprites_generate ;
+  $img-width:image-width(sprite-path($sprites_generate));
+  $img-height:image-height(sprite-path($sprites_generate));
+  $sprite-img-width:em($img-width);
+  $sprite-img-height:em($img-height);
+  background-size:$sprite-img-width $sprite-img-height;
+}
+@import "compass/utilities/sprites"; 
+@import "compass/css3/background-size";
+$global-spacing:5px;
+$ico-spacing:5px;
+$global-layout:horizontal;
+@import "global/*.png";
+$seed-spacing:5px;
+$seed-layout:horizontal;
+@import "seed/*.png";
+@import "ico/*.png";
+@mixin sprite-position($map,$name){
+  $xpos-pre: nth(sprite-position($map, $name), 1);
+  $ypos-pre: nth(sprite-position($map, $name), 2);
+  @if ($ypos-pre != 0) {
+    $ypos-pre: rem($ypos-pre / 1px);
+  }
+  @if ($xpos-pre != 0) {
+    $xpos-pre: rem($xpos-pre / 1px);
+  }
+  background-position: $xpos-pre $ypos-pre;
+}
+@mixin sprite($map,$name){
+  background-image:sprite-url($map);
+  background-repeat:no-repeat;
+  $height-pre: image-height(sprite-file($map, $name));
+  $width-pre: image-width(sprite-file($map, $name)); 
+  width:rem($width-pre / 1px);
+  height:rem($height-pre / 1px);
+  $sprite-width: image-width(sprite-path($map));
+  $sprite-height: image-height(sprite-path($map));
+  background-size:rem($sprite-width / 1px) rem($sprite-height / 1px);
+  @include sprite-position($map,$name);
+}
+/* 
+zoom style btn_play
+@mixin sprite-zoom($map,btn_play,$zoom){
+  background-image:sprite-url($map);
+  background-repeat:no-repeat;
+  $height-pre: image-height(sprite-file($map, $name));
+  $width-pre: image-width(sprite-file($map, $name)); 
+  width:rem($width-pre / 1px);
+  height:rem($height-pre / 1px);
+  $sprite-width: image-width(sprite-path($map));
+  $sprite-height: image-height(sprite-path($map));
+  background-size:rem($sprite-width*$zoom / 1px) rem($sprite-height*$zoom / 1px);
+  @include sprite-position($map,btn_play);
+} 
+    $xpos-pre: nth(sprite-position($global-sprites,tip_fail), 1) / 1px;
+    $ypos-pre: nth(sprite-position($global-sprites,tip_fail), 2) / 1px;
+    background-size:rem({image-width(sprite-path($map)}} / 1px) rem($sprite-height / 1px);
+
+*/
+@mixin sprite_fix_center($map,$name){
+  position: absolute;
+  top:50%;
+  left:50%;
+  $height-pre: image-height(sprite-file($map, $name));
+  $width-pre: image-width(sprite-file($map, $name)); 
+  margin-top:- rem($height-pre / 2px) ;
+  margin-left:- rem($width-pre / 2px);
+  @include sprite($map,$name);
+}
+/* sprite mixin end */
+@mixin border_gradient($bdcolor,$bd_top_color,$bd_bottom_color){
+  border:$bdcolor;
+  border-top-color: $bd_top_color;
+  border-bottom-color:$bd_bottom_color;
+}
+@mixin bg_gradient($bg_gradient_start_color,$bg_gradient_end_color){
+   background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, $bg_gradient_start_color), color-stop(100%, $bg_gradient_end_color));
+}
+@mixin fix_fit($top,$right,$bottom,$left){
+  position:absolute;
+  top:$top;
+  right:$right;
+  bottom:$bottom;
+  left:$left;
+}
+@mixin fix_fixed($top,$right,$bottom,$left){
+  position:fixed;
+  top:$top;
+  right:$right;
+  bottom:$bottom;
+  left:$left;
+}
+@mixin fix_center($margin){
+  top:50%;
+  left:50%;
+  margin:$margin;
+  z-index:4
+}
+@mixin bg_pseudo_element($bgpic,$width,$height){
+    display: inline-block;
+    content: "";
+    background: url('../images/#{$bgpic}') no-repeat;
+    background-size:$width $height;
+    width:$width;
+    height:$height;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>button demo</title>
+    <link rel="stylesheet" href="css/resource_ad.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      window.onload=function(){
+        $(".ico,.detail_contbox a,.search_list li a").on('tap.hover', function () {
+          var node = $(this);
+          node.addClass('hover');
+          setTimeout(function () {
+              node.removeClass('hover');
+          },300);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <h2>全UI通用</h2><a href="#" class="obtn">签到</a><a href="#" class="obtn obtn_signin_done">已签到</a><a href="#" class="obtn obtn_full">按钮</a>
+    </div>
+    <div>
+      <h2>用于视频图片内部</h2><a href="#" class="btn_play">按钮</a>
+    </div>
+    <div>
+      <h2>搜索页</h2><a href="#" class="fbtn">去全网搜索资源</a>
+      <h2>下载格式选择</h2>
+      <nav class="filter_nav"><a href="#" class="fbd">标清</a><a href="#" class="on">高清</a><a href="#">超清</a></nav>
+    </div>
+    <div>
+      <h2>搜索页</h2><a href="#" class="bbtn">分集</a>
+    </div>
+  </body>
+</html>
